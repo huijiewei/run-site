@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+
+const { title = "一个 Astro 站点", description = "收集" } = Astro.props;
+---
+
+<!doctype html>
+<html class="overflow-y-scroll motion-safe:scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <slot name="head" />
+  </head>
+  <body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col">
+    <slot />
+  </body>
+</html>
